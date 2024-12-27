@@ -48,8 +48,7 @@ def set_custom_style():
         }
 
         .stButton > button:hover {
-            background-color: #1E1E1E;
-            color: #ADD8E6;
+            color: #2563eb;
         }
 
         footer {
