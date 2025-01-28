@@ -37,19 +37,6 @@ def set_custom_style():
             margin: 2rem 0;
         }
 
-         footer {
-            text-align: left;
-            font-size: 1rem;
-        }
-
-        footer a {
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
         .result-container {
             border-radius: 8px;
             padding: 0 1.5rem 1.5rem;
@@ -70,13 +57,7 @@ def set_custom_style():
             100% { transform: rotate(360deg); }
         }
         </style>
-    """, unsafe_allow_html=True)
-
-def create_footer():
-    st.markdown("""
-        <footer>
-            <a href="https://github.com/dan10ish/coldmailbot" target="_blank">Source Code</a>
-        </footer>
+        <meta name="theme-color" content="#1c1c1c">
     """, unsafe_allow_html=True)
 
 def create_streamlit_app(llm, clean_text):
@@ -151,7 +132,6 @@ def create_streamlit_app(llm, clean_text):
                 st.error(f"An error occurred: {e}")
 
     st.markdown('</div>', unsafe_allow_html=True)
-    create_footer()
 
 if __name__ == "__main__":
     st.set_page_config(
