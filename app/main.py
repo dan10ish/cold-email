@@ -5,29 +5,31 @@ import tempfile
 from chains import Chain
 from utils import clean_text
 
+st.set_page_config(
+    layout="wide",
+    page_title="MailBot - AI Email Generator",
+    page_icon="📧",
+    initial_sidebar_state="collapsed"
+)
+
 def set_custom_style():
     st.markdown("""
         <style>
-
-        .caption{
-            font-size: 1.2rem;
+        .caption {
+            font-size: 1.1rem;
         }
-
-        .opac{
+        .opac {
             opacity: 0.7;
         }
-
         .caption a {
             text-decoration: none;
             opacity: 1 !important;
         }
-
         .caption a:hover {
             text-decoration: underline;
             opacity: 1;
         }
-
-        .info{
+        .info {
             font-size: 0.85rem;
             padding: 1rem 2rem;
             border-radius: 0.5rem;
@@ -36,12 +38,10 @@ def set_custom_style():
             border: 1px solid rgba(255, 218, 3, 0.75);
             margin: 2rem 0;
         }
-
         .result-container {
             border-radius: 8px;
             padding: 0 1.5rem 1.5rem;
         }
-
         .loader {
             border: 4px solid #f3f3f3;
             border-radius: 50%;
@@ -51,13 +51,26 @@ def set_custom_style():
             animation: spin 1s linear infinite;
             margin: 2rem auto;
         }
-
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
         </style>
     """, unsafe_allow_html=True)
+
+theme_color = "#1c1c1c"
+
+st.markdown(
+    f"""
+    <script>
+    const meta = document.createElement('meta');
+    meta.name = "theme-color";
+    meta.content = "{theme_color}";
+    document.getElementsByTagName('head')[0].appendChild(meta);
+    </script>
+    """,
+    unsafe_allow_html=True,
+)
 
 def create_streamlit_app(llm, clean_text):
     set_custom_style()
@@ -133,11 +146,5 @@ def create_streamlit_app(llm, clean_text):
     st.markdown('</div>', unsafe_allow_html=True)
 
 if __name__ == "__main__":
-    st.set_page_config(
-        layout="wide",
-        page_title="MailBot - AI Email Generator",
-        page_icon="📧",
-        initial_sidebar_state="collapsed"
-    )
     chain = Chain()
     create_streamlit_app(chain, clean_text)

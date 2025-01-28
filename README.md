@@ -50,7 +50,7 @@ streamlit run main.py
 
 ## Live Demo
 
-Visit [MailBot](https://coldmailbot.streamlit.app) to try it out!
+Visit [MailBot](https://mailbot.streamlit.app/) to try it out!
 
 ## License
 
