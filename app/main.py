@@ -9,76 +9,50 @@ def set_custom_style():
     st.markdown("""
         <style>
 
-        html, body, [class*="css"] {
-          font-family: monospace !important;
+        .caption{
+            font-size: 1.2rem;
         }
 
-        .stTitle {
-            color: #1E1E1E;
-            font-weight: 700;
-            font-size: 2.5rem !important;
-            padding-bottom: 0rem;
-            font-family: monospace !important;
+        .opac{
+            opacity: 0.7;
         }
 
-        .stTextInput{
-          padding: 0.5rem;
+        .caption a {
+            text-decoration: none;
+            opacity: 1 !important;
         }
 
-        .stTextInput > div > div > input {
-            font-family: monospace;
-            padding: 0.5rem;
-            border-radius: 8px;
-            font-size: 0.85rem !important;
+        .caption a:hover {
+            text-decoration: underline;
+            opacity: 1;
         }
 
-        .stFileUploader > div > button {
-            font-family: monospace;
-            padding: 1rem;
-            border-radius: 8px;
+        .info{
+            font-size: 0.85rem;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            background: rgba(255, 222, 33, 0.07);
+            color: #ffda03;
+            border: 1px solid rgba(255, 218, 3, 0.75);
+            margin: 2rem 0;
         }
 
-        .stButton > button {
-            font-family: monospace;
-            color: white;
-            padding: 0.75rem 2rem;
-            border-radius: 8px;
-            border: none;
-            transition: all 0.3s ease;
-        }
-
-        .stButton > button:hover {
-            color: #2563eb;
-        }
-
-        footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            color: #bbbbbb;
-            padding: 1rem;
-            text-align: center;
-            z-index: 1000;
+         footer {
+            text-align: left;
             font-size: 1rem;
         }
 
         footer a {
-            color: white;
             text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: all 0.3s ease;
         }
 
         footer a:hover {
-            color: #E9ECEF;
-            text-decoration: none;
+            text-decoration: underline;
         }
 
         .result-container {
             border-radius: 8px;
-            padding: 1.5rem;
-            margin-top: 2rem;
+            padding: 0 1.5rem 1.5rem;
         }
 
         .loader {
@@ -101,7 +75,6 @@ def set_custom_style():
 def create_footer():
     st.markdown("""
         <footer>
-            Made by <a href="https://danish.bio" target="_blank">Danish</a> |
             <a href="https://github.com/dan10ish/coldmailbot" target="_blank">Source Code</a>
         </footer>
     """, unsafe_allow_html=True)
@@ -111,23 +84,30 @@ def create_streamlit_app(llm, clean_text):
 
     st.markdown('<div class="main-container">', unsafe_allow_html=True)
 
-    st.title("Cold Email Generator")
+    st.title("MailBot")
 
     st.markdown("""
-        Generate personalized cold emails for job applications by providing a job posting URL
-        and your resume. The AI will analyze both and create a tailored email.
-    """)
+        <div class="caption">
+            <span class="opac">Cold Email Generator by</span> <a href="https://danish.bio" target="_blank">Danish</a>
+        </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("""
+        <div class="info">
+            Generate personalized cold emails for job applications by providing a job posting URL and your resume. The AI will analyze both and create a tailored email.
+        </div>
+    """, unsafe_allow_html=True)
 
     url_input = st.text_input(
         "Job Posting URL",
         value="https://www.google.com/about/careers/",
-        placeholder="Enter the job posting URL here..."
+        help="Enter the job posting URL"
     )
 
     resume_file = st.file_uploader(
         'Upload Your Resume (PDF)',
         type="pdf",
-        help="Upload your resume in PDF format"
+        help="Upload your resume in PDF"
     )
 
     extracted_resume_text = ""
@@ -176,7 +156,7 @@ def create_streamlit_app(llm, clean_text):
 if __name__ == "__main__":
     st.set_page_config(
         layout="wide",
-        page_title="ColdMailBot - AI Email Generator",
+        page_title="MailBot - AI Email Generator",
         page_icon="📧",
         initial_sidebar_state="collapsed"
     )

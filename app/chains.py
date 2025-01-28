@@ -46,9 +46,35 @@ class Chain:
             {resume_data}
 
             ### Instruction:
-              Imagine that the above resume is yours with your name.
-              Your job is to write a cold email to the hiring manager tailoring to the job description mentioned above describing your capability and how they should hire you according to the resume. Dont make it sound like AI, dont make it too long, keep it relevant, impressive and simple. Get the subject right according to the job title. Add relevant stuff relating your resume to the job description and skills.
-              Do not provide a preamble.
+              Using the above resume and job description, write a compelling cold email to the hiring manager. Follow these specific guidelines:
+
+1. Use the name and experience exactly as shown in the resume - do not fabricate or add details
+2. Structure:
+   - Subject line: Application for [Job Title]
+   - Opening: Concise introduction referencing the specific role
+   - Core paragraphs: Match 2-3 strongest achievements from the resume to the job requirements
+   - Closing: Brief call to action
+   - Salutations and contact details (taken from resume data)
+
+3. Writing style:
+   - Natural and conversational tone
+   - No AI-like language or generic phrases
+   - Active voice with specific examples
+   - Maximum 250 words
+
+4. Content requirements:
+   - Only reference skills and experiences explicitly stated in the resume
+   - Draw clear connections between past achievements and job requirements
+   - Include measurable impacts where available (%, numbers, scale)
+   - Focus on most relevant experience for this role
+
+5. Formatting:
+   - Professional email format
+   - Short, focused paragraphs
+   - No bullet points
+   - Clear spacing
+
+Do not add any explanatory text before or after the email. Do not provide a preamble.
             
             ### EMAIL (NO PREAMBLE):
             """
