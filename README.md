@@ -1,6 +1,6 @@
 # ColdMailBot 📧
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-green?style=for-the-badge&logo=streamlit)](https://coldmailbot.streamlit.app/)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-green?style=for-the-badge&logo=streamlit)](https://mailbot.streamlit.app)
 [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/dan10ish/coldmailbot)
 [![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://www.python.org/)
 [![Made with LangChain](https://img.shields.io/badge/🦜_LangChain-black?style=for-the-badge)](https://github.com/hwchase17/langchain)
@@ -50,7 +50,7 @@ streamlit run main.py
 
 ## Live Demo
 
-Visit [ColdMailBot](https://coldmailbot.streamlit.app) to try it out!
+Visit [ColdMailBot](https://mailbot.streamlit.app) to try it out!
 
 ## License
 
