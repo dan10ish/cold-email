@@ -70,6 +70,7 @@ def set_custom_style():
             100% { transform: rotate(360deg); }
         }
         </style>
+        <meta name="theme-color" content="#1c1c1c">
     """, unsafe_allow_html=True)
 
 def create_footer():
